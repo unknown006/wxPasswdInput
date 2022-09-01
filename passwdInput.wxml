@@ -1,0 +1,27 @@
+<!--component/passwdInput/passwdInput.wxml-->
+<view class="container" catch:tap="openKeyBoard">
+  <view wx:for="{{ list }}" wx:key="id" class="block">
+    <view wx:if="{{ currentIndex === index}}" hidden="{{ !showFocus }}" class="focus"></view>
+    <text wx:elif="{{ currentIndex !== index }}">{{ item.input }}</text>
+  </view>
+</view>
+<view hidden="{{ !showKeyBoard }}" class="keyboardMask" catch:tap="closeKeyboard">
+  <view class="keyboard">
+    <view class="key" hover-class="activeKey" data-value="1" catch:tap="inputChange">1</view>
+    <view class="key" hover-class="activeKey" data-value="2" catch:tap="inputChange">2</view>
+    <view class="key" hover-class="activeKey" data-value="3" catch:tap="inputChange">3</view>
+    <view class="key" hover-class="activeKey" data-value="4" catch:tap="inputChange">4</view>
+    <view class="key" hover-class="activeKey" data-value="5" catch:tap="inputChange">5</view>
+    <view class="key" hover-class="activeKey" data-value="6" catch:tap="inputChange">6</view>
+    <view class="key" hover-class="activeKey" data-value="7" catch:tap="inputChange">7</view>
+    <view class="key" hover-class="activeKey" data-value="8" catch:tap="inputChange">8</view>
+    <view class="key" hover-class="activeKey" data-value="9" catch:tap="inputChange">9</view>
+    <view class="key" catch:tap="stop"></view>
+    <view class="key" hover-class="activeKey" data-value="0" catch:tap="inputChange">0</view>
+    <view class="key" hover-class="activeKey" catch:tap="backClick">
+      <view class="backIcon">
+        <text>x</text>
+      </view>
+    </view>
+  </view>
+</view>
